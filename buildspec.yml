@@ -14,7 +14,7 @@ phases:
   build:
     commands:
       - echo "Build started on date"
-      #- cd leaf/
+      #- cd newtest/
       - mvn clean install  # or mvn package, depending on your needs
   post_build:
     commands:
@@ -26,7 +26,6 @@ phases:
 artifacts:
   files:
     - target/*.jar
-    - abc.txt
     - appsec.yml
     - start_application.sh
   discard-paths: yes
