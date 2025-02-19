@@ -5,7 +5,7 @@ files:
     - destination: /home/ubuntu/newtest/*.jar
 hooks:
   ApplicationStart:
-    - location: start_application.sh
+    - location: /newtest/scripts/start_application.sh
       timeout: 300
       runas: ubuntu
   
