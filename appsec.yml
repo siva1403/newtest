@@ -1,0 +1,11 @@
+version: 0.0
+os: linux
+files:
+    - source: /leaf/*.zip
+    - destination: /home/ubuntu/leaf/*.jar
+hooks:
+  ApplicationStart:
+    - location: start_application.sh
+      timeout: 300
+      runas: ubuntu
+  

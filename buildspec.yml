@@ -1,0 +1,33 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+      - echo "Installing dependencies"
+      # Add any necessary commands to install dependencies, such as Maven
+  pre_build:
+    commands:
+      - echo "Pre-build phase started on date"
+      # Any commands to be executed before build
+  build:
+    commands:
+      - echo "Build started on date"
+      #- cd leaf/
+      - mvn clean install  # or mvn package, depending on your needs
+  post_build:
+    commands:
+      - echo "Build completed on date"
+      - echo "Packaging the application"
+      - mvn package # Package your application
+      - ls target/
+      - pwd
+artifacts:
+  files:
+    - target/*.jar
+    - abc.txt
+    - appsec.yml
+    - start_application.sh
+  discard-paths: yes
+  base-directory: .
