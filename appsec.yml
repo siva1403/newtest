@@ -3,9 +3,18 @@ os: ubuntu
 files:
     - source: /
     - destination: /home/ubuntu/newtest/*.jar
+permissions:
+  - object: /home/ubuntu/newtest
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
+    mode: 755
+  - object: /home/ubuntu/newtest/scripts/start_application.sh
+    owner: root
+    group: root
+    mode: 755
 hooks:
   ApplicationStart:
     - location: /newtest/scripts/start_application.sh
       timeout: 300
       runas: ubuntu
-  
