@@ -9,7 +9,7 @@ files:
     owner: ubuntu
     group: ubuntu
     mode: 755
-  - object: /home/ubuntu/transport/start_application.sh
+  - object: /home/ubuntu/newtest/start_application.sh
     owner: root
     group: root
     mode: 755
