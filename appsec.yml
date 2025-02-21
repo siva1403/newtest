@@ -3,7 +3,8 @@ os: ubuntu
 files:
     - source: /
     - destination: /home/ubuntu/newtest/*.jar
-    permissions:
+      overwrite: true
+permissions:
   - object: /home/ubuntu/newtest
     pattern: "**"
     owner: ubuntu
@@ -15,6 +16,6 @@ files:
     mode: 755
 hooks:
   ApplicationStart:
-    - location: /newtest/scripts/start_application.sh
+    - location: /home/ubuntu/newtest/scripts/start_application.sh
       timeout: 300
       runas: root
